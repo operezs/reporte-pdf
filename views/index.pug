@@ -1,0 +1,35 @@
+extends layout
+block content
+  .row
+    .col-md-8
+      h1="Generar Reporte"
+      form.form-horizontal.well(method="post", action="/pdf")
+          .form-group
+              label.col-md-2.control-label Nombre
+              .col-md-10
+                .input-group
+                  input.form-control(type="text", required='true', name="filename", placeholder="Nombre del archivo")
+                  .input-group-addon=".pdf"
+          .form-group
+              label.col-md-2.control-label Título
+              .col-md-10
+                textarea.form-control(name="content", required='true', placeholder="Introdusca un título para el reporte!")
+          .form-group
+              label.col-md-2.control-label Empresa
+              .col-md-10
+                input.form-control(name="empresa", required='true', placeholder="Introdusca la Empresa")
+          .form-group
+              label.col-md-2.control-label Id de Junta
+              .col-md-10
+                input.form-control(type='number', required='true', name="junta",  placeholder="Introdusca el Id de la Junta")
+          .form-group
+              label.col-md-2.control-label Fecha Inicial
+              .col-md-4
+                input.form-control(type='date', required='true', name="fech_In", placeholder="Introdusca la fecha de inicio")
+              label.col-md-2.control-label Fecha Final
+              .col-md-4
+                input.form-control(type='date', required='true', name="fech_Fin", placeholder="Introdusca la fecha final")
+              
+          .form-group
+              .col-sm-offset-2.col-sm-10
+                input.btn.btn-default(type="submit", value="Crear Reporte")
